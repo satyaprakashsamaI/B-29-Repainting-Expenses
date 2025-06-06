@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8" />
+  <title>B-29 Repainting Expenses</title>
+  <style>
+    body {
+      background-color: #FAF0E6;
+      font-family: "Courier New", monospace;
+      margin: 0;
+      padding: 0;
+      color: #000;
+    }
+
+    header {
+      background-color: #800000;
+      color: #FFFFF0;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      border-bottom: 4px double #FFFFF0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+    }
+
+    #realTimeClock {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      color: #FFFF00;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .ticker-container {
+      overflow: hidden;
+      white-space: nowrap;
+      background-color: #800000;
+      border-top: 3px solid #FFFFF0;
+      border-bottom: 3px solid #FFFFF0;
+    }
+
+    .ticker {
+      display: inline-block;
+      padding-left: 100%;
+      animation: ticker-scroll 45s linear infinite;
+      font-size: 18px;
+      color: #FFFFF0;
+    }
+
+    .stock {
+      display: inline-block;
+      margin: 0 40px;
+      font-weight: bold;
+    }
+
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .table-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin: 40px auto;
+      gap: 20px;
+      width: 90%;
+      max-width: 1400px;
+    }
+
+    .vintage-ad {
+      width: 400px;
+      height: 400px;
+      object-fit: contain;
+    }
+
+    .expenses-table {
+      width: 100%;
+      max-width: 600px;
+      border-collapse: collapse;
+      font-size: 18px;
+    }
+
+    .expenses-table th,
+    .expenses-table td {
+      border: 2px solid #8B4513;
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    .expenses-table th {
+      background-color: #DEB887;
+      color: #800000;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .expenses-table td {
+      background-color: #FFF8DC;
+      color: #000;
+    }
+
+    .expenses-table tr:nth-child(even) td {
+      background-color: #FAEBD7;
+    }
+
+    /* ========== Download Section ========== */
+    .download-section {
+      text-align: center;
+      margin: 40px auto;
+      font-size: 18px;
+    }
+
+    .rainbow-text {
+      text-decoration: none;
+      font-weight: bold;
+      animation: rainbow-text 1s linear infinite;
+    }
+
+    @keyframes rainbow-text {
+      0%   { color: #FF0000; }
+      14%  { color: #FF7F00; }
+      28%  { color: #FFFF00; }
+      42%  { color: #00FF00; }
+      56%  { color: #0000FF; }
+      70%  { color: #4B0082; }
+      84%  { color: #8B00FF; }
+      100% { color: #FF0000; }
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      padding: 20px 0;
+      border-top: 1px solid #CCC;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    Expenses Incurred for Repainting B-29
+    <div id="realTimeClock">Loading Time...</div>
+  </header>
+
+  <div class="ticker-container">
+    <div class="ticker">
+      <span class="stock">Reliance Industries: ₹ 176.35</span>
+      <span class="stock">Tata Consultancy Services: ₹ 217.50</span>
+      <span class="stock">Infosys: ₹ 200.25</span>
+      <span class="stock">HDFC Bank: ₹ 155.90</span>
+      <span class="stock">ICICI Bank: ₹ 97.45</span>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <img src="Kingfisher London.jpg" alt="Kingfish Airlines - AD" class="vintage-ad" />
+
+    <table class="expenses-table">
+      <tr>
+        <th>Particulars</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td>27/05/2025, 1st receipt</td>
+        <td>₹ 22,930.00</td>
+      </tr>
+      <tr>
+        <td>01/06/2025, 2nd receipt</td>
+        <td>₹ 2,130.00</td>
+      </tr>
+      <tr>
+        <td>05/06/2025, 3rd receipt</td>
+        <td>₹ 440.00</td>
+      </tr>
+      <tr>
+        <td>Satya's Supervision charges</td>
+        <td>₹ 3,000.00</td>
+      </tr>
+      <tr>
+        <td>Manpower cost</td>
+        <td>₹ 10,000.00</td>
+      </tr>
+      <tr>
+        <td><strong>TOTAL SUM</strong></td>
+        <td><strong>₹ 28,500.00</strong></td>
+      </tr>
+    </table>
+
+    <img src="Kingfisher London.jpg" alt="Kingfish Airlines - AD" class="vintage-ad" />
+  </div>
+
+  <!-- ========== DOWNLOAD SECTION ========== -->
+  <div class="download-section">
+    To obtain your receipt, kindly 
+    <a href="receipt.zip" download class="rainbow-text">click here</a> to initiate download.
+  </div>
+
+  <footer>
+    © Satya Prakash Samal • Last updated 09/09/2008
+  </footer>
+
+  <script>
+    function updateISTClock() {
+      const now = new Date();
+      const options = {
+        timeZone: "Asia/Kolkata",
+        hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      };
+      const formatter = new Intl.DateTimeFormat("en-IN", options);
+      document.getElementById("realTimeClock").textContent = formatter.format(now) + " IST";
+    }
+    setInterval(updateISTClock, 1000);
+    updateISTClock();
+  </script>
+</body>
+</html>
